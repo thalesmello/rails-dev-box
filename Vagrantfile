@@ -10,11 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  config.vm.box = "digital_ocean"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -34,7 +34,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
+  # config.ssh.forward_agent = true
+  config.ssh.private_key_path = "~/.ssh/id_rsa"
   config.ssh.forward_agent = true
+  config.vm.provider :digital_ocean do |provider|
+    provider.client_id = "YOUR CLIENT ID"
+    provider.api_key = "YOUR API KEY"
+    provider.image = "Ubuntu 12.10 x64"
+    provider.region = "New York 2"
+  end
 
   # Shell Provisioning
 
@@ -52,14 +60,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider :virtualbox do |vb|
-    # Don't boot with headless mode
-    # vb.gui = true
+  # config.vm.provider :virtualbox do |vb|
+  #   # Don't boot with headless mode
+  #   # vb.gui = true
   
-    # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "4096"]
-    vb.customize ["modifyvm", :id, "--cpus", "2"]
-  end
+  #   # Use VBoxManage to customize the VM. For example to change memory:
+  #   vb.customize ["modifyvm", :id, "--memory", "4096"]
+  #   vb.customize ["modifyvm", :id, "--cpus", "2"]
+  # end
   #
   # View the documentation for the provider you're using for more
   # information on available options.

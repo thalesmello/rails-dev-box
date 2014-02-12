@@ -3,7 +3,7 @@
 # Installing RVM and Ruby
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 curl -sSL https://get.rvm.io | bash -s $1
-echo source /home/vagrant/.rvm/scripts/rvm >> ~/.bashrc
+echo source /home/root/.rvm/scripts/rvm >> ~/.bashrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 rvm install 2.0.0
 rvm use --default 2.0.0

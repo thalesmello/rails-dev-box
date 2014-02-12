@@ -17,13 +17,14 @@ sudo apt-get install -y curl
 sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib-9.1
 # sudo pg_dropcluster --stop 9.1 main
 # sudo pg_createcluster --start -e UTF-8 9.1 main
-sudo -u postgres createuser vagrant -s
+sudo -u postgres createuser root -s
 
 sudo apt-get install -y redis-server
 sudo apt-get install -y mongodb
 sudo apt-get install -y install memcached
 sudo apt-get install -y libxslt-dev
 sudo apt-get install -y g++
+sudo apt-get install -y build-essential
 
 # Elastic Search
 sudo apt-get install -y openjdk-7-jre-headless -y
