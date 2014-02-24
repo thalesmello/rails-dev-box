@@ -30,9 +30,13 @@ echo alias gc=\'git commit\' >> ~/.bashrc
 echo alias gd=\'git diff\' >> ~/.bashrc
 echo alias go=\'git checkout\' >> ~/.bashrc
 echo alias gm=\'git commit -m\' >> ~/.bashrc
+echo alias gl=\'git log\' >> ~/.bashrc
 echo alias be=\'bundle exec\' >> ~/.bashrc
 echo alias zc=\'zeus console\' >> ~/.bashrc
 echo alias zs=\'zeus server\' >> ~/.bashrc
 echo alias zt=\'zeus test\' >> ~/.bashrc
 echo alias zr=\'zeus rake\' >> ~/.bashrc
 echo alias mag=\'cd ~/magnetis\' >> ~/.bashrc
+
+# Jspec function
+echo "function jspec { local spec=\`echo $1 | sed 's_spec/javascripts/__' | sed 's_.js__'\`;  zeus rake konacha:run SPEC=\$spec }" >> ~/.bashrc
