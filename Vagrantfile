@@ -16,11 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => 'setup_sudo.sh'
   config.vm.provision :shell, :path => 'setup.sh', :privileged => false
 
-  config.vm.synced_folder ".", "/vagrant",
-    type: "rsync",
-    rsync__auto: "true",
-    rsync__exclude: ".git/",
-    id: "shared-folder-id"
+  config.vm.synced_folder ".", "/vagrant"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "4096"]
