@@ -10,6 +10,12 @@ rvm use --default 2.0.0
 gem install zeus
 rvm rvmrc warning ignore allGemfiles
 
+# Enabling geo-location apt-mirrors
+sed -i '1s/^/deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted universe multiverse\n/' /etc/apt/sources.list
+sed -i '1s/^/deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse\n/' /etc/apt/sources.list
+sed -i '1s/^/deb mirror://mirrors.ubuntu.com/mirrors.txt precise-backports main restricted universe multiverse\n/' /etc/apt/sources.list
+sed -i '1s/^/deb mirror://mirrors.ubuntu.com/mirrors.txt precise-security main restricted universe multiverse\n/' /etc/apt/sources.list
+
 # Git Configurations
 git config --global color.ui true
 git config --global pull.default current
