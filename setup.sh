@@ -45,4 +45,4 @@ echo alias zr=\'zeus rake\' >> ~/.bashrc
 echo alias mag=\'cd ~/magnetis\' >> ~/.bashrc
 
 # Jspec function
-echo "function jspec { local spec=\`echo $1 | sed 's_spec/javascripts/__' | sed 's_.js__'\`;  zeus rake konacha:run SPEC=\$spec }" >> ~/.bashrc
+echo "jspec() { local spec=\`echo $1 | sed 's_spec/javascripts/__' | sed 's_.js__'\`;  zeus rake konacha:run SPEC=\$spec; }" >> ~/.bashrc
