@@ -27,6 +27,8 @@ echo --color >> ~/.rspec
 echo --format progress >> ~/.rspec
 sed -i '1s/^/force_color_prompt=yes\n/' ~/.bashrc
 
+# Config git lg
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Aliases
 echo alias gs=\'git status\' >> ~/.bashrc
@@ -36,7 +38,7 @@ echo alias gc=\'git commit\' >> ~/.bashrc
 echo alias gd=\'git diff\' >> ~/.bashrc
 echo alias go=\'git checkout\' >> ~/.bashrc
 echo alias gm=\'git commit -m\' >> ~/.bashrc
-echo alias gl=\'git log\' >> ~/.bashrc
+echo alias gl=\'git lg\' >> ~/.bashrc
 echo alias be=\'bundle exec\' >> ~/.bashrc
 echo alias zc=\'zeus console\' >> ~/.bashrc
 echo alias zs=\'zeus server\' >> ~/.bashrc
