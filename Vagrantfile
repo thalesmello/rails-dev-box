@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.ssh.forward_agent = true
 
-  config.vm.provision :shell, :path => 'setup_sudo.sh'
+  config.vm.provision :shell, :path => 'sudo.sh'
   config.vm.provision :shell, :path => 'setup.sh', :privileged => false
 
   config.vm.synced_folder ".", "/vagrant"
