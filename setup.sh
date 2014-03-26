@@ -7,8 +7,10 @@ echo source /home/vagrant/.rvm/scripts/rvm >> ~/.bashrc
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 rvm install 2.0.0
 rvm use --default 2.0.0
-gem install zeus
 rvm rvmrc warning ignore allGemfiles
+
+# Zeus
+gem install zeus
 
 # Git Configurations
 git config --global color.ui true
