@@ -33,7 +33,7 @@ apt_install git vim curl python-software-properties
 # PostgreSQL 9.2
 sudo add-apt-repository -y ppa:pitti/postgresql
 sudo apt-get update
-apt_install postgresql-9.2 postgresql-server-dev-9.2 po stgresql-contrib-9.2 postgresql postgresql-client libpq-dev
+apt_install postgresql-9.2 postgresql-server-dev-9.2 stgresql-contrib-9.2 postgresql postgresql-client libpq-dev
 
 # Creates Vagrant user
 sudo -u postgres createuser vagrant -s
