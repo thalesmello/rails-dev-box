@@ -30,9 +30,16 @@ sudo apt-get update
 # General tools
 apt_install git vim curl python-software-properties
 
-# PostgreSQL 9.2
+# Add custom repositories
 sudo add-apt-repository -y ppa:pitti/postgresql
+sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
+
+# Node JS
+apt_install python-software-properties python g++ make nodejs
+
+# PostgreSQL 9.2
+sudo apt-get remove -y postgresql-9.1
 apt_install postgresql-9.2 postgresql-server-dev-9.2 stgresql-contrib-9.2 postgresql postgresql-client libpq-dev
 
 # Creates Vagrant user
